@@ -1,0 +1,108 @@
+#
+#   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+#   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+#   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+#   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+#   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+#   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+#
+# [section/base]
+include-file = ~/.config/polybar/modules.config
+
+######################## 
+### GENERAL SETTINGS ### 
+########################
+
+[global/wm]
+margin-top = 
+margin-bottom = 
+
+[colors]
+foreground  = ${xrdb:Polybar.foreground}
+foreground-alt = ${xrdb:Polybar.foreground-alt}
+background  = ${xrdb:Polybar.background}
+black       = ${xrdb:Polybar.color0}
+red         = ${xrdb:Polybar.color1}
+green       = ${xrdb:Polybar.color2}
+yellow      = ${xrdb:Polybar.color3}
+blue        = ${xrdb:Polybar.color4}
+magenta     = ${xrdb:Polybar.color5}
+cyan        = ${xrdb:Polybar.color6}
+white       = ${xrdb:Polybar.color7}
+
+[settings]
+throttle-output     = 5
+throttle-output-for = 10
+throttle-input-for  = 30
+screenchange-reload = true
+
+#compositing-background = xor
+#compositing-background = screen
+#compositing-foreground = source
+#compositing-border     = over
+pseudo-transparency     = true
+
+# Fallback values for all formats
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-underline  =
+format-overline   =
+format-spacing    =
+format-padding    =
+format-margin     = 
+format-offset     =
+
+
+####################
+### BAR SETTINGS ### 
+####################
+
+[bar/top-moon]
+monitor     = ${env:MONITOR}
+
+background  = ${colors.background}
+foreground  = ${colors.foreground}
+
+### Fonts ###
+# For normal text
+font-0  = "Noto Sans:size=10;2"
+# For icons
+font-1  = "NotoSans Nerd Font:size=11;2" 
+# For powerline symbols
+font-2  = "NotoSans Nerd Font:size=12;3" 
+#font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+#font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+#font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-3  = "DejaVuSansMono Nerd Font:size=11"
+
+cursor-click = pointer
+
+height = 20
+width  = 100%
+bottom = false
+
+# For a floating polybar
+# override-redirect = true
+wm-restack          = bspwm
+
+radius          = 0.0
+#line-size      = 2
+#line-color     = #000000
+padding-right   = 0
+padding-left    = 0
+module-margin   = 0
+
+# Invisible top border (for a floating bar)
+border-color       = #00000000
+border-left-size   = 10
+border-right-size  = 10
+border-top-size    = 10
+border-bottom-size = 0
+
+### Modules ###
+fixed-center   = true 
+modules-left   = arch-icon bspwm arrow2 cmus spotify
+modules-center = 
+modules-right  = arrow-end battery arrow-yellow brightness arrow-blue filesystem arrow-cyan updates-arch-aur arrow-magenta  arrow-red pulseaudio arrow-green temperature arrow-yellow cpu arrow-blue memory arrow-cyan wifi-moon arrow-magenta date arrow-red time 
+
+
